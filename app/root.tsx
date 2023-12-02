@@ -1,13 +1,21 @@
+import type { LinksFunction } from '@remix-run/node'
 import { Links, Meta, Outlet, Scripts, LiveReload } from '@remix-run/react'
+import faviconUrlAsset from './assets/favicons/remix-favicon.svg'
 
-
-
+export const links: LinksFunction = () => {
+	return [
+		{
+			rel: 'icon',
+			href: faviconUrlAsset,
+			type: 'image/svg+xml',
+		},
+	]
+}
 
 export default function App() {
 	return (
 		<html>
 			<head>
-				<link rel="icon" href="data:image/x-icon;base64,AA" />
 				<Meta />
 				<Links />
 			</head>
