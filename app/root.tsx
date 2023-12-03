@@ -1,5 +1,12 @@
 import type { LinksFunction } from '@remix-run/node'
-import { Links, Meta, Outlet, Scripts, LiveReload } from '@remix-run/react'
+import {
+	Links,
+	Meta,
+	Outlet,
+	Scripts,
+	LiveReload,
+	Link,
+} from '@remix-run/react'
 import faviconUrlAsset from './assets/favicons/remix-favicon.svg'
 import fontStylesheetUrl from './styles/fonts.css'
 import stylesheet from './styles/tailwind.css'
@@ -42,31 +49,25 @@ export default function App() {
 				<Links />
 			</head>
 			<body>
-				<h1 className="text-3xl ">Hello World!</h1>
-				<h2 className="text-2xl ">Pharetra pharetra massa massa ultricies</h2>
-				<h3 className="text-xl ">
-					Parturient montes nascetur ridiculus mus mauris vitae ultricies leo
-					integer
-				</h3>
-				<p className="text-base">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-					eiusmod tempor incididunt ut labore et dolore magna aliqua. Fringilla
-					est ullamcorper eget nulla facilisi etiam dignissim diam. Venenatis
-					urna cursus eget nunc scelerisque viverra. Vitae et leo duis ut diam
-					quam nulla. Volutpat odio facilisis mauris sit amet massa. Porta lorem
-					mollis aliquam ut. Ut tellus elementum sagittis vitae et leo. Id diam
-					maecenas ultricies mi. Cursus vitae congue mauris rhoncus aenean vel.
-					Et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut.
-					Magna sit amet purus gravida quis blandit turpis cursus in. Eu
-					volutpat odio facilisis mauris. Dolor morbi non arcu risus quis varius
-					quam quisque id. Orci a scelerisque purus semper eget duis at tellus
-					at. Quis hendrerit dolor magna eget est lorem ipsum. Risus in
-					hendrerit gravida rutrum quisque non. Pulvinar sapien et ligula
-					ullamcorper malesuada proin libero nunc consequat.
-				</p>
-
-				<Outlet />
-
+				<header className="h-24  bg-slate-200 px-8">
+					<nav className="  flex h-full w-full items-center justify-end  ">
+						<ul className="flex  gap-8 ">
+							<Link to="/sign-up">
+								<li>Sign Up</li>
+							</Link>
+							<Link to="/sign-in">
+								<li>Sign In</li>
+							</Link>
+							<Link to="my-account">
+								<li>My Account</li>
+							</Link>
+						</ul>
+					</nav>
+				</header>
+				<div className="bg-teal-400">
+					<Outlet />
+				</div>
+				<footer></footer>
 				<Scripts />
 				<LiveReload />
 			</body>
