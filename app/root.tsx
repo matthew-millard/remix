@@ -8,6 +8,7 @@ import {
 	Link,
 } from '@remix-run/react'
 import faviconUrlAsset from './assets/favicons/remix-favicon.svg'
+import LogoUrlAsset from './assets/logos/remix-logo.svg'
 import fontStylesheetUrl from './styles/fonts.css'
 import stylesheet from './styles/tailwind.css'
 
@@ -49,7 +50,12 @@ export default function App() {
 				<Links />
 			</head>
 			<body>
-				<header className="h-24  bg-slate-200 px-8">
+				<header className="flex h-24  bg-slate-200 pl-8 pr-16 shadow-[0_1px_5px_5px_rgba(0,0,0,0.2)]">
+					<span className="flex h-full items-center">
+						<Link to="/">
+							<img src={LogoUrlAsset} alt="Remix logo" />
+						</Link>
+					</span>
 					<nav className="  flex h-full w-full items-center justify-end  ">
 						<ul className="flex  gap-8 ">
 							<Link to="/sign-up">
