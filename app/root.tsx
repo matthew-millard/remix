@@ -1,7 +1,8 @@
 import type { LinksFunction } from '@remix-run/node'
 import { Links, Meta, Outlet, Scripts, LiveReload } from '@remix-run/react'
 import faviconUrlAsset from './assets/favicons/remix-favicon.svg'
-import fontUrl from './styles/fonts.css'
+import fontStylesheetUrl from './styles/fonts.css'
+import stylesheet from './styles/tailwind.css'
 
 export const links: LinksFunction = () => {
 	return [
@@ -24,7 +25,11 @@ export const links: LinksFunction = () => {
 		},
 		{
 			rel: 'stylesheet',
-			href: fontUrl,
+			href: fontStylesheetUrl,
+		},
+		{
+			rel: 'stylesheet',
+			href: stylesheet,
 		},
 	]
 }
@@ -37,13 +42,13 @@ export default function App() {
 				<Links />
 			</head>
 			<body>
-				<h1>Hello World!</h1>
-				<h2>Pharetra pharetra massa massa ultricies</h2>
-				<h3>
+				<h1 className="text-3xl ">Hello World!</h1>
+				<h2 className="text-2xl ">Pharetra pharetra massa massa ultricies</h2>
+				<h3 className="text-xl ">
 					Parturient montes nascetur ridiculus mus mauris vitae ultricies leo
 					integer
 				</h3>
-				<p>
+				<p className="text-base">
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 					eiusmod tempor incididunt ut labore et dolore magna aliqua. Fringilla
 					est ullamcorper eget nulla facilisi etiam dignissim diam. Venenatis
