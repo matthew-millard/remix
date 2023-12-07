@@ -23,5 +23,6 @@
       "skipLibCheck": true,
       "allowImportingTsExtensions": true,
       "noEmit": true,
+      
     }
   }

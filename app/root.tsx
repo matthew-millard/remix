@@ -1,4 +1,4 @@
-import type { LinksFunction } from '@remix-run/node'
+import type { LinksFunction, MetaFunction } from '@remix-run/node'
 import {
 	Links,
 	Meta,
@@ -42,10 +42,25 @@ export const links: LinksFunction = () => {
 	]
 }
 
+export const meta: MetaFunction = () => {
+	return [
+		{
+			title: 'Remix Playground',
+		},
+		{
+			name: 'description',
+			content: 'Personal playground for learning the Remix framework',
+		},
+	]
+}
+
 export default function App() {
 	return (
-		<html>
+		<html lang="en">
 			<head>
+				<meta charSet="UTF-8" />
+				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+				<meta name="author" content="Matt Millard" />
 				<Meta />
 				<Links />
 			</head>
@@ -70,7 +85,7 @@ export default function App() {
 						</ul>
 					</nav>
 				</header>
-				<div className="bg-teal-400">
+				<div>
 					<Outlet />
 				</div>
 				<footer></footer>
