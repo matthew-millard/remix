@@ -8,9 +8,9 @@ import {
 	Link,
 } from '@remix-run/react'
 import faviconUrlAsset from './assets/favicons/remix-favicon.svg'
-import LogoUrlAsset from './assets/logos/remix-logo.svg'
 import fontStylesheetUrl from './styles/fonts.css'
 import stylesheet from './styles/tailwind.css'
+import Icon from './components/Icon.tsx'
 
 export const links: LinksFunction = () => {
 	return [
@@ -65,25 +65,18 @@ export default function App() {
 				<Links />
 			</head>
 			<body>
-				<header className="flex h-24  bg-slate-200 pl-8 pr-16 shadow-[0_1px_5px_5px_rgba(0,0,0,0.2)]">
-					<span className="flex h-full items-center">
-						<Link to="/">
-							<img src={LogoUrlAsset} alt="Remix logo" />
-						</Link>
-					</span>
-					<nav className="  flex h-full w-full items-center justify-end  ">
-						<ul className="flex  gap-8 ">
-							<Link to="/sign-up">
-								<li>Sign Up</li>
-							</Link>
-							<Link to="/sign-in">
-								<li>Sign In</li>
-							</Link>
-							<Link to="my-account">
-								<li>My Account</li>
-							</Link>
-						</ul>
-					</nav>
+				<header className="flex h-24 items-center justify-between bg-slate-100  px-6  shadow-[0px_1px_10px_3px_rgba(0,0,0,0.2)]">
+					<Link
+						to="/"
+						className="flex h-full flex-shrink-0 items-center justify-start "
+					>
+						<span className="text-2xl font-bold">Matt Millard</span>
+					</Link>
+
+					<div className="flex items-center justify-between gap-6">
+						<Icon name="sun-bright" prefix="fal" size="2xl" />
+						<Icon name="bars" prefix="fal" size="2xl" />
+					</div>
 				</header>
 				<div>
 					<Outlet />
